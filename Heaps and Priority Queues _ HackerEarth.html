@@ -1,0 +1,1527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!-- saved from url=(0069)https://www.hackerearth.com/practice/notes/heaps-and-priority-queues/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="theme-color" content="#323754">
+        
+        <meta name="description" content=" 
+**Heaps:** A heap is a specific tree based data structure in which all the nodes of tree are in a specific order. Let’s say if X is a parent node ...
+ HackerEarth is a network of top developers across the world. Developers participate in online coding challenges and hackathons, solve problems and discover the best jobs.">
+        <link rel="canonical" href="https://www.hackerearth.com/practice/notes/heaps-and-priority-queues/">
+        <meta name="msvalidate.01" content="1BF418E510B5A17A2D71685C571BF4EB">
+
+        <!-- Errorception tracking snippet -->
+        <script type="application/javascript" async="" defer="" src="./Heaps and Priority Queues _ HackerEarth_files/track.js.download"></script><script src="./Heaps and Priority Queues _ HackerEarth_files/55ba39a81acd32ac7d0002d4.js.download" async=""></script><script src="./Heaps and Priority Queues _ HackerEarth_files/cb=gapi.loaded_1" async=""></script><script src="./Heaps and Priority Queues _ HackerEarth_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" async="" src="./Heaps and Priority Queues _ HackerEarth_files/recaptcha__en.js.download"></script><script type="text/javascript" async="" src="./Heaps and Priority Queues _ HackerEarth_files/5F90ycbP4JOg1fOUoELScA.js.download"></script><script type="text/javascript" async="" src="./Heaps and Priority Queues _ HackerEarth_files/plusone.js.download" gapi_processed="true"></script><script id="twitter-wjs" src="./Heaps and Priority Queues _ HackerEarth_files/widgets.js.download"></script><script id="facebook-jssdk" src="./Heaps and Priority Queues _ HackerEarth_files/all.js.download"></script><script type="text/javascript" async="" src="./Heaps and Priority Queues _ HackerEarth_files/mixpanel-2.2.min.js.download"></script><script src="./Heaps and Priority Queues _ HackerEarth_files/fbevents.plugins.identity.js.download" async=""></script><script async="" src="./Heaps and Priority Queues _ HackerEarth_files/fbevents.js.download"></script><script type="text/javascript" async="" src="https://s.adroll.com/j/roundtrip.js"></script><script async="" src="./Heaps and Priority Queues _ HackerEarth_files/gtm.js.download"></script><script async="" src="./Heaps and Priority Queues _ HackerEarth_files/analytics.js.download"></script><script>
+            (function(_,e,rr,s){_errs=[s];var c=_.onerror;_.onerror=function(){var a=arguments;_errs.push(a);
+            c&&c.apply(this,a)};var b=function(){var c=e.createElement(rr),b=e.getElementsByTagName(rr)[0];
+            c.src="//beacon.errorception.com/"+s+".js";c.async=!0;b.parentNode.insertBefore(c,b)};
+            _.addEventListener?_.addEventListener("load",b,!1):_.attachEvent("onload",b)})
+            (window,document,"script","55ba39a81acd32ac7d0002d4");
+        </script>
+
+        
+<meta name="google-site-verification" content="ozqyeStBcz4eehbY9Ohb_IUQcA4y8BKzzDCT-H1QPPc">
+
+
+        
+        
+        <!-- google analytics start -->
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-34729975-1', 'auto');
+            ga('require', 'displayfeatures');
+            
+            ga('send', 'pageview');
+        </script>
+        <!-- google analytics end -->
+        
+        
+
+        
+        
+        <!-- Google Tag Manager -->
+        <script>
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PBHB3B9');
+        </script>
+        <!-- End Google Tag Manager -->
+        
+        
+        
+        <title>   Heaps and Priority Queues  | HackerEarth  </title>
+
+        
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<!-- Facebook tags -->
+<meta property="fb:app_id" content="190817380995032">
+<meta property="og:title" content="Heaps and Priority Queues - Prateek Garg">
+<meta property="og:image" content="https://he-s3.s3.amazonaws.com/media/avatars/prat33k/resized/200/137f61e700x500xfeatured01.jpg.pagespeed.ic.b8f3fw1bcm.jpg">
+<meta property="og:description" content="**Heaps:** A heap is a specific tree based data structure in which all the nodes of tree are in a specific order. Let’s say if X is a parent node of Y, then the value of X follows some specific ...">
+<meta property="og:url" content="https://www.hackerearth.com/practice/notes/heaps-and-priority-queues/">
+<meta property="og:site_name" content="HackerEarth">
+<meta property="og:type" content="website">
+<!-- end Facbook tags -->
+
+<!-- Twitter tags -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@HackerEarth">
+<meta name="twitter:url" content="https://www.hackerearth.com/practice/notes/heaps-and-priority-queues/">
+<meta name="twitter:title" content="Heaps and Priority Queues">
+<!-- end Twitter tags -->
+
+        
+        <link rel="shortcut icon" href="./Heaps and Priority Queues _ HackerEarth_files/HE_identity.png" type="image/x-icon">
+        
+
+        <link rel="stylesheet" href="./Heaps and Priority Queues _ HackerEarth_files/base_common_combined.css">
+        <link rel="stylesheet" href="./Heaps and Priority Queues _ HackerEarth_files/tipTip.css">
+        <link rel="stylesheet" href="./Heaps and Priority Queues _ HackerEarth_files/offline-theme-slide.css">
+        <link rel="stylesheet" href="./Heaps and Priority Queues _ HackerEarth_files/font-awesome.min.css">
+        <link rel="stylesheet" href="./Heaps and Priority Queues _ HackerEarth_files/opensans.css" type="text/css">
+
+        
+
+
+
+        
+<link rel="stylesheet" type="text/css" href="./Heaps and Priority Queues _ HackerEarth_files/polls.css">
+<link rel="stylesheet" type="text/css" href="./Heaps and Priority Queues _ HackerEarth_files/pagedown.css">
+<link rel="stylesheet" type="text/css" href="./Heaps and Priority Queues _ HackerEarth_files/notes.css">
+<link rel="stylesheet" type="text/css" href="./Heaps and Priority Queues _ HackerEarth_files/nice_threadedcomments.css">
+<link href="./Heaps and Priority Queues _ HackerEarth_files/prettify.css" type="text/css" rel="stylesheet">
+
+
+        <!-- Make the static variable available for all js files -->
+        <script>
+            var STATIC_URL = "https://hackerearth.global.ssl.fastly.net/static/";
+        </script><style>@media print {#ghostery-purple-box {display:none !important}}</style>
+
+        <!-- Store CSRF_COOKIE -->
+        <script>
+            var CSRF_COOKIE_USED = "True";
+            var CSRF_COOKIE = "wZUPy0EoO6tbWA2VE0C6qmBVa95q9LZm6SMMyEeeOgUD1syj4dm99pUL41DcjYH0";
+        </script>
+
+        
+
+    <style type="text/css" media="screen">.uv-icon{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;display:inline-block;cursor:pointer;position:relative;-moz-transition:all 300ms;-o-transition:all 300ms;-webkit-transition:all 300ms;transition:all 300ms;width:39px;height:39px;position:fixed;z-index:100002;opacity:0.8;-moz-transition:opacity 100ms;-o-transition:opacity 100ms;-webkit-transition:opacity 100ms;transition:opacity 100ms}.uv-icon.uv-bottom-right{bottom:10px;right:12px}.uv-icon.uv-top-right{top:10px;right:12px}.uv-icon.uv-bottom-left{bottom:10px;left:12px}.uv-icon.uv-top-left{top:10px;left:12px}.uv-icon.uv-is-selected{opacity:1}.uv-icon svg{width:39px;height:39px}.uv-popover{font-family:sans-serif;font-weight:100;font-size:13px;color:black;position:fixed;z-index:100001}.uv-popover-content{-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;background:white;position:relative;width:325px;height:325px;-moz-transition:background 200ms;-o-transition:background 200ms;-webkit-transition:background 200ms;transition:background 200ms}.uv-bottom .uv-popover-content{-moz-box-shadow:rgba(0,0,0,0.3) 0 -10px 60px,rgba(0,0,0,0.1) 0 0 20px;-webkit-box-shadow:rgba(0,0,0,0.3) 0 -10px 60px,rgba(0,0,0,0.1) 0 0 20px;box-shadow:rgba(0,0,0,0.3) 0 -10px 60px,rgba(0,0,0,0.1) 0 0 20px}.uv-top .uv-popover-content{-moz-box-shadow:rgba(0,0,0,0.3) 0 10px 60px,rgba(0,0,0,0.1) 0 0 20px;-webkit-box-shadow:rgba(0,0,0,0.3) 0 10px 60px,rgba(0,0,0,0.1) 0 0 20px;box-shadow:rgba(0,0,0,0.3) 0 10px 60px,rgba(0,0,0,0.1) 0 0 20px}.uv-left .uv-popover-content{-moz-box-shadow:rgba(0,0,0,0.3) 10px 0 60px,rgba(0,0,0,0.1) 0 0 20px;-webkit-box-shadow:rgba(0,0,0,0.3) 10px 0 60px,rgba(0,0,0,0.1) 0 0 20px;box-shadow:rgba(0,0,0,0.3) 10px 0 60px,rgba(0,0,0,0.1) 0 0 20px}.uv-right .uv-popover-content{-moz-box-shadow:rgba(0,0,0,0.3) -10px 0 60px,rgba(0,0,0,0.1) 0 0 20px;-webkit-box-shadow:rgba(0,0,0,0.3) -10px 0 60px,rgba(0,0,0,0.1) 0 0 20px;box-shadow:rgba(0,0,0,0.3) -10px 0 60px,rgba(0,0,0,0.1) 0 0 20px}.uv-ie8 .uv-popover-content{position:relative}.uv-ie8 .uv-popover-content .uv-popover-content-shadow{display:block;background:black;content:'';position:absolute;left:-15px;top:-15px;width:100%;height:100%;filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius=15,MakeShadow=true,ShadowOpacity=0.30);z-index:-1}.uv-popover-tail{border:9px solid transparent;width:0;z-index:10;position:absolute;-moz-transition:border-top-color 200ms;-o-transition:border-top-color 200ms;-webkit-transition:border-top-color 200ms;transition:border-top-color 200ms}.uv-top .uv-popover-tail{bottom:-20px;border-top:11px solid white}.uv-bottom .uv-popover-tail{top:-20px;border-bottom:11px solid white}.uv-left .uv-popover-tail{right:-20px;border-left:11px solid white}.uv-right .uv-popover-tail{left:-20px;border-right:11px solid white}.uv-popover-loading{background:white;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;position:absolute;width:100%;height:100%;left:0;top:0}.uv-popover-loading-text{position:absolute;top:50%;margin-top:-0.5em;width:100%;text-align:center}.uv-popover-iframe-container{height:100%}.uv-popover-iframe{-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;overflow:hidden}.uv-is-hidden{display:none}.uv-is-invisible{display:block !important;visibility:hidden !important}.uv-is-transitioning{display:block !important}.uv-no-transition{-moz-transition:none !important;-webkit-transition:none !important;-o-transition:color 0 ease-in !important;transition:none !important}.uv-fade{opacity:1;-moz-transition:opacity 200ms ease-out;-o-transition:opacity 200ms ease-out;-webkit-transition:opacity 200ms ease-out;transition:opacity 200ms ease-out}.uv-fade.uv-is-hidden{opacity:0}.uv-scale-top,.uv-scale-top-left,.uv-scale-top-right,.uv-scale-bottom,.uv-scale-bottom-left,.uv-scale-bottom-right,.uv-scale-right,.uv-scale-right-top,.uv-scale-right-bottom,.uv-scale-left,.uv-scale-left-top,.uv-scale-left-bottom,.uv-slide-top,.uv-slide-bottom,.uv-slide-left,.uv-slide-right{opacity:1;-moz-transition:all 80ms ease-out;-o-transition:all 80ms ease-out;-webkit-transition:all 80ms ease-out;transition:all 80ms ease-out}.uv-scale-top.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(-15%);-ms-transform:scale(0.8) translateY(-15%);-webkit-transform:scale(0.8) translateY(-15%);transform:scale(0.8) translateY(-15%)}.uv-scale-top-left.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(-15%) translateX(-10%);-ms-transform:scale(0.8) translateY(-15%) translateX(-10%);-webkit-transform:scale(0.8) translateY(-15%) translateX(-10%);transform:scale(0.8) translateY(-15%) translateX(-10%)}.uv-scale-top-right.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(-15%) translateX(10%);-ms-transform:scale(0.8) translateY(-15%) translateX(10%);-webkit-transform:scale(0.8) translateY(-15%) translateX(10%);transform:scale(0.8) translateY(-15%) translateX(10%)}.uv-scale-bottom.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(15%);-ms-transform:scale(0.8) translateY(15%);-webkit-transform:scale(0.8) translateY(15%);transform:scale(0.8) translateY(15%)}.uv-scale-bottom-left.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(15%) translateX(-10%);-ms-transform:scale(0.8) translateY(15%) translateX(-10%);-webkit-transform:scale(0.8) translateY(15%) translateX(-10%);transform:scale(0.8) translateY(15%) translateX(-10%)}.uv-scale-bottom-right.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(15%) translateX(10%);-ms-transform:scale(0.8) translateY(15%) translateX(10%);-webkit-transform:scale(0.8) translateY(15%) translateX(10%);transform:scale(0.8) translateY(15%) translateX(10%)}.uv-scale-right.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(15%);-ms-transform:scale(0.8) translateX(15%);-webkit-transform:scale(0.8) translateX(15%);transform:scale(0.8) translateX(15%)}.uv-scale-right-top.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(15%) translateY(-10%);-ms-transform:scale(0.8) translateX(15%) translateY(-10%);-webkit-transform:scale(0.8) translateX(15%) translateY(-10%);transform:scale(0.8) translateX(15%) translateY(-10%)}.uv-scale-right-bottom.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(15%) translateY(10%);-ms-transform:scale(0.8) translateX(15%) translateY(10%);-webkit-transform:scale(0.8) translateX(15%) translateY(10%);transform:scale(0.8) translateX(15%) translateY(10%)}.uv-scale-left.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(-15%);-ms-transform:scale(0.8) translateX(-15%);-webkit-transform:scale(0.8) translateX(-15%);transform:scale(0.8) translateX(-15%)}.uv-scale-left-top.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(-15%) translateY(-10%);-ms-transform:scale(0.8) translateX(-15%) translateY(-10%);-webkit-transform:scale(0.8) translateX(-15%) translateY(-10%);transform:scale(0.8) translateX(-15%) translateY(-10%)}.uv-scale-left-bottom.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(-15%) translateY(10%);-ms-transform:scale(0.8) translateX(-15%) translateY(10%);-webkit-transform:scale(0.8) translateX(-15%) translateY(10%);transform:scale(0.8) translateX(-15%) translateY(10%)}.uv-slide-top.uv-is-hidden{-moz-transform:translateY(-100%);-ms-transform:translateY(-100%);-webkit-transform:translateY(-100%);transform:translateY(-100%)}.uv-slide-bottom.uv-is-hidden{-moz-transform:translateY(100%);-ms-transform:translateY(100%);-webkit-transform:translateY(100%);transform:translateY(100%)}.uv-slide-left.uv-is-hidden{-moz-transform:translateX(-100%);-ms-transform:translateX(-100%);-webkit-transform:translateX(-100%);transform:translateX(-100%)}.uv-slide-right.uv-is-hidden{-moz-transform:translateX(100%);-ms-transform:translateX(100%);-webkit-transform:translateX(100%);transform:translateX(100%)}
+</style><style type="text/css" media="screen">.uv-icon:hover{opacity:1}</style><style type="text/css" media="print">#uvTab,.uv-tray,.uv-icon,.uv-popover,.uv-bubble{display:none!important}</style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><script type="text/javascript" charset="utf-8" async="" src="./Heaps and Priority Queues _ HackerEarth_files/button.ea31e9a5ca2c3a1514ec1ed6530e2669.js.download"></script><script type="text/javascript" charset="UTF-8" src="./Heaps and Priority Queues _ HackerEarth_files/common.js.download"></script><script type="text/javascript" charset="UTF-8" src="./Heaps and Priority Queues _ HackerEarth_files/util.js.download"></script><script type="text/javascript" charset="UTF-8" src="./Heaps and Priority Queues _ HackerEarth_files/stats.js.download"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+
+    <body><div id="MathJax_Message" style="display: none;"></div>
+
+        
+        
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBHB3B9"
+            height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        
+        
+
+        <!-- Placeholder for any error message on the site -->
+        
+        <div id="alert-message-holder">
+            
+
+            <!-- put a dummy message box so that it can be used when cloning
+                 and adding more -->
+            
+        <div class="alert-message hidden">
+                <div class="message float-left"></div>
+                <div class="cross-holder float-left"><span class="small-cross sprites"></span></div>
+                <div class="clear"></div>
+            </div></div> <!-- end alert-message-holder -->
+        
+
+        
+    <div id="top-prompt-container" class="hidden prompt-container"></div>
+    <div id="right-prompt-container" class="hidden prompt-container"></div>
+    <div id="center-modal-prompt-container" class="hidden prompt-container"></div>
+    
+    
+        
+        <header class="header">
+            <i class="fa fa-bars mobile-menu-btn"></i>
+            <nav class="navigation">
+                
+                <a href="https://www.hackerearth.com/" class="logo logo-h-terminal no-underline float-left track-header-logo"></a>
+                
+
+                
+                <ul class="nav-bar no-padding float-left tablet-hide">
+                    <!-- challenges page -->
+                    <li id="challenges" class="nav-bar-menu "><a class="track-header-challenges" href="https://www.hackerearth.com/challenges/">CHALLENGES</a></li>
+                    <!-- hackathons page -->
+                    
+                    <!-- practice page -->
+                    <li id="problems" class="nav-bar-menu "><a class="track-header-problems" href="https://www.hackerearth.com/practice/">PRACTICE</a></li>
+                    <!-- companies page -->
+                    <li id="companies" class="nav-bar-menu "><a class="track-header-companies" href="https://www.hackerearth.com/companies/">COMPANIES</a></li>
+                </ul>
+                <ul class="nav-bar right-nav-bar no-padding float-right tablet-hide">
+                    
+                    
+                    <li id="searchbar">
+                        <div id="search-icon-container" class="float-left">
+                            <i class="fa fa-search"></i>
+                        </div>
+                            <input id="searchbar-input" class="float-left" type="text" value="" name="q" autocomplete="off" spellcheck="false" placeholder="Search developers, problems, etc" ajax1="/search/AJAX/search/" ajax2="/search/search-results/">
+                        <div id="search-dropdown" style="display: none;"></div>
+                    </li>
+                    
+                    
+
+                    
+
+                    
+
+
+                    
+
+                    
+
+                    
+                        <li class="nav-bar-menu login-menu-btn"><a target="login-modal" class="track-header-login show-modal">LOGIN</a></li>
+                        <li class="nav-bar-menu signup-menu-btn"><a target="login-modal" class="track-header-signup show-modal show-signup-in-modal">SIGN UP</a></li>
+                    
+
+                    <div class="clear"></div>
+                </ul> <!-- nav-bar -->
+                <div class="clear"></div>
+                
+            </nav> <!-- navigation -->
+
+            <i class="fa fa-filter challenge-filter-btn hidden"></i>
+
+        </header> <!-- header -->
+        
+    
+    
+
+    
+    
+    <div class="top-banner">
+        <p class="banner-text login-banner dark">
+        
+         Signup and get free access to 100+ Tutorials and Practice Problems <a class="button btn-orange-bright inline-block medium-margin-left show-modal show-signup-in-modal" target="login-modal">Start Now</a>
+        
+        </p>
+    </div>
+    
+    
+
+    
+
+    <div id="comment-share-modal" class="modal-window small-modal">
+        <div class="modal-header">
+            Comment permalink
+        </div>
+        <div class="modal-content">
+            <div class="comment-share-wrapper align-center">
+                <textarea class="comment-share-text" type="textbox" rows="4" readonly="readonly" onclick="this.select();"></textarea>
+            </div>
+        </div>
+    </div>
+
+    
+    
+
+    
+    <!-- live events widget -->
+    <div id="live-events-trigger-data"><div id="live-events-container" class="live-events">
+    <div class="green-color pagelet-hover" id="live-events-placeholder" ajax="/AJAX/live_events_widget/" target="live-events-loading">
+        <span>Live Events</span>
+        <span id="live-events-widget-count">12</span>
+    </div>
+    <!-- This div is used for spacing between top and bottom borders while scrolling.-->
+    <div id="live-events-loading">
+    </div>
+</div>
+
+</div>
+    
+
+    <!-- This is the center page which has a fixed width of 1100px -->
+    
+<div class="responsive-page denim-gray-texture">
+    <div class="responsive-container">
+        <div class="page-data">
+            <div class="left medium-margin">
+                <div class="notes-header content weight-600 large" id="notes-left-container">
+                    <a href="https://www.hackerearth.com/practice/notes/"><i class="fa fa-long-arrow-left"></i> Notes</a>
+                    
+            </div> <!--heading-2 -->
+            <div class="clear"></div>
+
+            
+
+
+
+
+<div class="note-container">
+    <div class="note-title-container content">
+        
+        
+        <div class="notes-vote regular align-center light">
+            <span class="polls">
+                <a href="https://www.hackerearth.com/practice/notes/heaps-and-priority-queues/#" class="anon-polls-up light show-modal inline-block show-signup-in-modal" target="login-modal"><i class="fa fa-caret-up fa-lg fa-3x"></i></a>
+                <br>
+                <span class="polls-count only-positive inline-block dark">106 </span>
+            </span>
+        </div> <!-- end of notes-vote -->
+        
+        
+
+        
+
+        <div class="notes-item standard-margin-left">
+            <div class="notes-title">
+             Heaps and Priority Queues
+            </div>
+            <div class="notes-description">
+                    
+                    <div class="less-margin tags-list">
+                    
+                        
+                        
+                        <div class="note-tags dark smaller float-left medium-margin-right"> Code Monk</div>
+                        
+                        
+                        
+                        <div class="note-tags dark smaller float-left medium-margin-right"> Heap</div>
+                        
+                        
+                        
+                        <div class="note-tags dark smaller float-left medium-margin-right"> Heapsort</div>
+                        
+                        
+                        
+                        <div class="note-tags dark smaller float-left medium-margin-right"> Priority-queue</div>
+                        
+                        
+                    
+                        </div> <!-- tags-list -->
+                    
+                    
+                    <div class="clear"></div>
+
+            </div> <!-- notes-description -->
+        </div><!-- notes-tem -->
+    </div> <!-- note-title-container -->
+
+    <hr class="hr-dashed">
+
+    <div class="regular darker note-body content">
+        <p><strong>Heaps:</strong><br>
+A heap is a specific tree based data structure in which all the nodes of tree are in a specific order. Let’s say if X is a parent node of Y, then the value of X follows some specific order with respect to value of Y and the same order will be followed across the tree.  </p>
+<p>The maximum number of children of a node in the heap depends on the type of heap. However in the more commonly used heap type, there are at most 2 children of a note and it's known as a Binary heap.   </p>
+<p>In binary heap, if the heap is a complete binary tree with N nodes, then it has has smallest possible height which is <strong>log <sub>2</sub> N</strong> .  </p>
+<p><img alt="enter image description here" src="./Heaps and Priority Queues _ HackerEarth_files/f1ee0cf.jpg"></p>
+<p>In the diagram above, you can observe a particular sequence, i.e each node has greater value than any of its children. </p>
+<p>Suppose there are N Jobs in a queue to be done, and each job has its own priority. The job with maximum priority will get completed first than others. At each instant we are completing a job with maximum priority and at the same time we are also interested in inserting a new job in the queue with its own priority.</p>
+<p>So at each instant we have to check for the job with maximum priority to complete it and also insert if there is a new job. This task can be very easily executed using a heap by considering N jobs as N nodes of the tree.</p>
+<p>As you can see in the diagram below, we can use an array to store the nodes of the tree. Let’s say we have 7 elements with values {6, 4, 5, 3, 2, 0, 1}. </p>
+<p>Note: An array can be used to simulate a tree in the following way. If we are storing one element at index i in array Ar, then its parent will be stored at index i/2 (unless its a root, as root has no parent) and can be access by Ar[ i/2 ], and its left child can be accessed by Ar[ 2 * i ] and its right child can be accessed by Ar[ 2 * i +1 ]. Index of root will be 1 in an array.  </p>
+<p><img alt="enter image description here" src="./Heaps and Priority Queues _ HackerEarth_files/2270b0f.jpg"></p>
+<p>There can be two types of heap:  </p>
+<p><strong>Max Heap:</strong> In this type of heap, the value of parent node will always be greater than or equal to the value of child node across the tree and the node with highest value will be the root node of the tree.  </p>
+<p><strong>Implementation:</strong></p>
+<p>Let’s assume that we have a heap having some elements which are stored in array Arr. The way to convert this array into a heap structure is the following.  We pick a node in the array, check if the left sub-tree and the right sub-tree are max heaps, in themselves and the node itself is a max heap (it’s value should be greater than all the child nodes)  </p>
+<p>To do this we will implement a function that can maintain the property of max heap (i.e each element value 
+should be greater than or equal to  any of its child and smaller than or equal to its parent)  </p>
+<pre class="prettyprint prettyprinted"><code><span class="kwd">void</span><span class="pln"> max_heapify </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln"> </span><span class="pun">],</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> N</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">int</span><span class="pln"> left </span><span class="pun">=</span><span class="pln"> </span><span class="lit">2</span><span class="pun">*</span><span class="pln">i                   </span><span class="com">//left child</span><span class="pln">
+    </span><span class="kwd">int</span><span class="pln"> right </span><span class="pun">=</span><span class="pln"> </span><span class="lit">2</span><span class="pun">*</span><span class="pln">i </span><span class="pun">+</span><span class="lit">1</span><span class="pln">           </span><span class="com">//right child</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">left</span><span class="pun">&lt;=</span><span class="pln"> N </span><span class="kwd">and</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln">left</span><span class="pun">]</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">)</span><span class="pln">
+          largest </span><span class="pun">=</span><span class="pln"> left</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">else</span><span class="pln">
+         largest </span><span class="pun">=</span><span class="pln"> i</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">right </span><span class="pun">&lt;=</span><span class="pln"> N </span><span class="kwd">and</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln">right</span><span class="pun">]</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln">largest</span><span class="pun">]</span><span class="pln"> </span><span class="pun">)</span><span class="pln">
+        largest </span><span class="pun">=</span><span class="pln"> right</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">largest </span><span class="pun">!=</span><span class="pln"> i </span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        swap </span><span class="pun">(</span><span class="typ">Ar</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">,</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln">largest</span><span class="pun">]);</span><span class="pln">
+        max_heapify </span><span class="pun">(</span><span class="typ">Arr</span><span class="pun">,</span><span class="pln"> largest</span><span class="pun">,</span><span class="pln">N</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln"> 
+ </span><span class="pun">}</span></code></pre>
+<p><strong>Complexity:</strong> O( log N )  </p>
+<p><strong>Example:</strong> <br>
+In the diagram below,initially 1st node (root node) is violating property of max-heap as it has smaller value than its children, so we are performing max_heapify function on this node having value 4.  </p>
+<p><img alt="enter image description here" src="./Heaps and Priority Queues _ HackerEarth_files/bb77134.jpg"></p>
+<p>As 8 is greater than 4, then 8 is swapped with 4 and max_heapify is performed again on 4, but on different position. Now in step 2, 6 is greater than 4, so 4 is swapped with 6 and we will get a   max heap, as now 4 is a leaf node, so further call to max_heapify will not create any effect on heap.     </p>
+<p>Now as we can see that we can maintain violated max- heap by using <strong>max_heapify</strong> function.  </p>
+<p>Before moving ahead, lets observe a property which states: A N element heap stored in an array has leaves indexed by N/2+1, N/2+2 , N/2+3 …. upto N.  </p>
+<p>Let’s observe this with an example:  </p>
+<p>Lets take above example of 7 elements having values {8, 7, 6, 3, 2, 4, 5}.  </p>
+<p><img alt="enter image description here" src="./Heaps and Priority Queues _ HackerEarth_files/efa33ee.jpg"></p>
+<p>So you can see that elements 3, 2, 4, 5 are indexed by N/2 +1 (i.e 4), N/2+2 (i.e 5 ) and N/2+3 (i.e 6) and N/2+4 (i.e 7) respectively.  </p>
+<p><strong>Building MAX HEAP:</strong> </p>
+<p>Now let’s say we have N elements stored in the array Arr indexed from 1 to N. They are currently not following the property of max heap. So we can use max-heapify function to make a max heap out of the array.  </p>
+<p>How?   </p>
+<p>From the above property we observed that  elements from Arr[ N/2+1 ] to Arr[ N ] are leaf nodes,and each node is a 1 element heap. We can use max_heapify function in a bottom up manner on remaining nodes, so that we can cover each node of tree.  </p>
+<pre class="prettyprint prettyprinted"><code><span class="kwd">void</span><span class="pln"> build_maxheap </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln"> </span><span class="pun">])</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> N</span><span class="pun">/</span><span class="lit">2</span><span class="pln"> </span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&gt;=</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="pun">;</span><span class="pln"> i</span><span class="pun">--</span><span class="pln"> </span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        max_heapify </span><span class="pun">(</span><span class="typ">Arr</span><span class="pun">,</span><span class="pln"> i</span><span class="pun">)</span><span class="pln"> </span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+<p><strong>Complexity:</strong>  O(N). max_heapify function has complexity log N and the build_maxheap functions runs only N/2 times, but the amortized complexity for this function is actually linear.<br>
+For more details, you can refer <a href="http://www.cs.umd.edu/~meesh/351/mount/lectures/lect14-heapsort-analysis-part.pdf">this</a>.  </p>
+<p><strong>Example:</strong><br>
+Suppose you have 7 elements stored in array Arr.  </p>
+<p><img alt="enter image description here" src="./Heaps and Priority Queues _ HackerEarth_files/967cbde.jpg"></p>
+<p>Here N = 7, so starting from node having index N/2 = 3, (also having value 3 in the above diagram), we will call max_heapify from index N/2 to 1.  </p>
+<p>In the diagram below:  </p>
+<p>In step 1, in max_heapify(Arr, 3), as 10 is greater than 3, 3 and 10 are swapped and further call to max_heap(Arr, 7) will have no effect as 3 is a leaf node now.  </p>
+<p><img alt="enter image description here" src="./Heaps and Priority Queues _ HackerEarth_files/af2e932.jpg"> </p>
+<p>In step 2, calling max_heapify(Arr, 2) , (node indexed with 2 has value 4) , 4 is swapped with 8 and further call to max_heap(Arr, 5) will have no effect, as 4 is a leaf node now.   </p>
+<p>In step 3, calling max_heapify(Arr, 1) , (node indexed with 1 has value 1 ), 1 is swapped with 10 .  </p>
+<p>Step 4 is a subpart of step 3, as after swapping 1 with 10, again a recursive call of max_heapify(Arr, 3) will be performed , and 1 will be swapped with 9. Now further call to max_heapify(Arr, 7) will have no effect, as 1 is a leaf node now.  </p>
+<p>In step 5, we  finally get a max- heap and the  elements in the array Arr will be :  </p>
+<p><img alt="enter image description here" src="./Heaps and Priority Queues _ HackerEarth_files/bebf8ba.jpg"></p>
+<p><strong>Min Heap:</strong> In this type of heap, the value of parent node will always be less than or equal to the value of child node across the tree and the node with lowest value will be the root node of tree.</p>
+<p><img alt="enter image description here" src="./Heaps and Priority Queues _ HackerEarth_files/d3dc558.jpg"></p>
+<p>As you can see in the above diagram, each node has a value smaller than the value of their children.<br>
+We can perform same operations as performed in building max_heap.<br>
+First we will make function which can maintain the min heap property, if some element is violating it.  </p>
+<pre class="prettyprint prettyprinted"><code><span class="kwd">void</span><span class="pln"> min_heapify </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln"> </span><span class="pun">]</span><span class="pln"> </span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> N</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> left  </span><span class="pun">=</span><span class="pln"> </span><span class="lit">2</span><span class="pun">*</span><span class="pln">i</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> right </span><span class="pun">=</span><span class="pln"> </span><span class="lit">2</span><span class="pun">*</span><span class="pln">i</span><span class="pun">+</span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> smallest</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">if</span><span class="pun">(</span><span class="pln">left </span><span class="pun">&lt;=</span><span class="pln"> N </span><span class="kwd">and</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln">left</span><span class="pun">]</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln"> i </span><span class="pun">]</span><span class="pln"> </span><span class="pun">)</span><span class="pln">
+     smallest </span><span class="pun">=</span><span class="pln"> left</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">else</span><span class="pln">
+    smallest </span><span class="pun">=</span><span class="pln"> i</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">if</span><span class="pun">(</span><span class="pln">right </span><span class="pun">&lt;=</span><span class="pln"> N </span><span class="kwd">and</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln">right</span><span class="pun">]</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln">smallest</span><span class="pun">]</span><span class="pln"> </span><span class="pun">)</span><span class="pln">
+    smallest </span><span class="pun">=</span><span class="pln"> right</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">if</span><span class="pun">(</span><span class="pln">smallest </span><span class="pun">!=</span><span class="pln"> i</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    swap </span><span class="pun">(</span><span class="typ">Arr</span><span class="pun">[</span><span class="pln"> i </span><span class="pun">],</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln"> smallest </span><span class="pun">]);</span><span class="pln">
+    min_heapify </span><span class="pun">(</span><span class="typ">Arr</span><span class="pun">,</span><span class="pln"> smallest</span><span class="pun">,</span><span class="pln">N</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln"> 
+</span><span class="pun">}</span></code></pre>
+<p><strong>Complexity:</strong>  O (log N) .</p>
+<p><strong>Example:</strong><br>
+Suppose you have elements stored in array Arr {4, 5, 1, 6, 7, 3, 2}. As you can see in the diagram below, the element at index 1 is violating the property of min -heap, so performing min_heapify(Arr, 1) will maintain the min-heap. </p>
+<p><img alt="enter image description here" src="./Heaps and Priority Queues _ HackerEarth_files/6cedb81.jpg"></p>
+<p>Now let’s use above function in building min - heap. We will run the above function on remaining nodes other than leaves as leaf nodes are 1 element heap.  </p>
+<pre class="prettyprint prettyprinted"><code><span class="kwd">void</span><span class="pln"> build_minheap </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln"> </span><span class="pun">])</span><span class="pln"> 
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pun">(</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> N</span><span class="pun">/</span><span class="lit">2</span><span class="pln"> </span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&gt;=</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="pun">;</span><span class="pln"> i</span><span class="pun">--)</span><span class="pln">
+    min_heapify </span><span class="pun">(</span><span class="typ">Arr</span><span class="pun">,</span><span class="pln"> i</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+<p><strong>Complexity:</strong> O( N ). The complexity calculation is similar to that of building max heap.  </p>
+<p><strong>Example:</strong><br>
+Consider elements in array {10, 8, 9, 7, 6, 5, 4} . We will run min_heapify  on nodes indexed from N/2 to 1. Here node indexed at N/2 has value 9. And at last, we will get a min_heap.  </p>
+<p><img alt="enter image description here" src="./Heaps and Priority Queues _ HackerEarth_files/a9ec72b.jpg"></p>
+<p>Heaps can be considered as partially ordered tree, as you can see in the above examples that the nodes of tree do not follow any order with their siblings(nodes on the same level). They can be mainly used when we give more priority to smallest or the largest node in the tree as we can extract these node very efficiently using heaps.  </p>
+<p><strong>APPLICATIONS:</strong> </p>
+<p>1) <strong>Heap Sort:</strong> </p>
+<p>We can use heaps in sorting the elements in a specific order in efficient time.<br>
+Let’s say we want to sort elements of array Arr in ascending order. We can use max heap to perform this operation.   </p>
+<p><strong>Idea:</strong> We build the max heap of elements stored in Arr, and the maximum element of Arr will always be at the root of the heap.   </p>
+<p>Leveraging this idea we can sort an array in the following manner.  </p>
+<p><strong>Processing:</strong> </p>
+<p>1) Initially we will build a max heap of elements in Arr.  </p>
+<p>2) Now the root element that is Arr[ 1 ] contains maximum element of Arr. After that, we will exchange this element with the last element of Arr and will again build a max heap excluding the last element which is already in its correct position and will decrease the length of heap by one.  </p>
+<p>3) We will repeat the  step 2, until we get all the elements in their correct position.  </p>
+<p>4) We will get a sorted array.</p>
+<p><strong>Implementation:</strong> </p>
+<p>Suppose there are N elements stored in array Arr.  </p>
+<pre class="prettyprint prettyprinted"><code><span class="kwd">void</span><span class="pln"> heap_sort</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> </span><span class="typ">Ar</span><span class="pun">[</span><span class="pln"> </span><span class="pun">])</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">int</span><span class="pln"> heap_size </span><span class="pun">=</span><span class="pln"> N</span><span class="pun">;</span><span class="pln">
+    build_maxheap</span><span class="pun">(</span><span class="typ">Arr</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> N</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">&gt;=</span><span class="lit">2</span><span class="pln"> </span><span class="pun">;</span><span class="pln"> i</span><span class="pun">--</span><span class="pln"> </span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        swap</span><span class="pun">|(</span><span class="typ">Arr</span><span class="pun">[</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="pun">],</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln"> i </span><span class="pun">]);</span><span class="pln">
+        heap_size </span><span class="pun">=</span><span class="pln"> heap_size</span><span class="pun">-</span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+        max_heapify</span><span class="pun">(</span><span class="typ">Arr</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> heap_size</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+<p><strong>Complexity:</strong>  As we know max_heapify has complexity O(logN), build_maxheap has complexity O(N) and we run max_heapify N-1 times in heap_sort function, therefore complexity of heap_sort function is O(N logN).  </p>
+<p><strong>Example:</strong><br>
+In the diagram below,initially  there is an unsorted array Arr  having 6 elements and then max-heap will be built. </p>
+<p><img alt="enter image description here" src="./Heaps and Priority Queues _ HackerEarth_files/db4b4d3.jpg"></p>
+<p>After building max-heap, the elements in the array Arr will be:  </p>
+<p><img alt="enter image description here" src="./Heaps and Priority Queues _ HackerEarth_files/02ab020.jpg"></p>
+<p><strong>Processing:</strong> </p>
+<p>Step 1: 8 is swapped with 5.<br>
+Step 2: 8 is disconnected from heap as 8 is in correct position now and.<br>
+Step 3: Max-heap is created and 7 is swapped with 3.<br>
+Step 4: 7 is disconnected from heap.<br>
+Step 5: Max heap is created  and 5 is swapped with 1.<br>
+Step 6: 5 is disconnected from heap.<br>
+Step 7:  Max heap is created  and 4 is swapped with 3.<br>
+Step 8: 4 is disconnected from heap.<br>
+Step 9:  Max heap is created and 3 is swapped with 1.<br>
+Step 10: 3 is disconnected.  </p>
+<p><img alt="enter image description here" src="./Heaps and Priority Queues _ HackerEarth_files/31ddacf.jpg"></p>
+<p>After all the steps, we will get a sorted array.</p>
+<p><img alt="enter image description here" src="./Heaps and Priority Queues _ HackerEarth_files/42ec5d1.jpg"></p>
+<p>2) <strong>Priority Queue:</strong> </p>
+<p>Priority Queue is similar to queue where we insert an element from the back and remove an element from front, but with a one difference that the logical order of elements in the priority queue depends on the priority of the elements. The element with highest priority will be moved to the front of the queue and one with lowest priority will move to the back of the queue. Thus it is possible that when you enqueue an element at the back in the queue, it can move to front because of its highest priority.  </p>
+<p><strong>Example:</strong><br>
+Let’s say we have an array of 5 elements : {4, 8, 1, 7, 3} and we have to insert all the elements in the max-priority queue.<br>
+First as the priority queue is empty, so 4 will be inserted initially. <br>
+ Now when 8 will be inserted it will moved to front as 8 is greater than 4.<br>
+While inserting 1, as it is the current minimum element in the priority queue, it will remain in the back of priority queue.<br>
+Now 7 will be inserted  between 8 and 4 as 7 is smaller than 8.<br>
+Now 3 will be inserted before 1 as it is the 2<sup>nd</sup> minimum element in the priority queue.
+All the steps are represented in the diagram below:  </p>
+<p><img alt="enter image description here" src="./Heaps and Priority Queues _ HackerEarth_files/6359c59.jpg"></p>
+<p>We can think of many ways to implement the priority queue.   </p>
+<p><strong>Naive Approach:</strong><br>
+Suppose we have N elements and we have to insert these elements in the priority queue.
+We can use list and can insert elements in O(N) time and can sort them to maintain a priority queue in O(N logN ) time.  </p>
+<p><strong>Efficient Approach:</strong><br>
+We can use heaps to implement the priority queue. It will take O(log N) time to insert and delete each element in the priority queue.  </p>
+<p>Based on heap structure, priority queue also has two types max- priority queue and min - priority queue.  </p>
+<p>Let’s focus on Max Priority Queue.  </p>
+<p>Max Priority Queue is based on the structure of max heap and can perform following operations:  </p>
+<p>maximum(Arr) : It returns maximum element from the Arr.<br>
+extract_maximum (Arr) - It removes and return the maximum element from the Arr.<br>
+increase_val (Arr, i , val) - It increases the key of element stored at index i in Arr to new value <strong>val</strong>.   <br>
+insert_val (Arr, val ) - It inserts the element with value <strong>val</strong> in Arr.  </p>
+<p><strong>Implementation:</strong> </p>
+<p>length = number of elements in Arr.  </p>
+<p><strong>Maximum</strong> :  </p>
+<pre class="prettyprint prettyprinted"><code><span class="pln">   </span><span class="kwd">int</span><span class="pln"> maximum</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln"> </span><span class="pun">])</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="pun">];</span><span class="pln">  </span><span class="com">//as the maximum element is the root element in the max heap.</span><span class="pln">
+    </span><span class="pun">}</span></code></pre>
+<p><strong>Complexity:</strong> O(1) </p>
+<p><strong>Extract Maximum:</strong> In this operation, the maximum element will be returned and the last element of heap will be placed at index 1 and max_heapify will be performed on node 1 as placing last element on index 1 will violate the property of max-heap.  </p>
+<pre class="prettyprint prettyprinted"><code><span class="kwd">int</span><span class="pln"> extract_maximum </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln"> </span><span class="pun">])</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">length </span><span class="pun">==</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+cout</span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="pun">“</span><span class="typ">Can</span><span class="pun">’</span><span class="pln">t remove element </span><span class="kwd">as</span><span class="pln"> queue </span><span class="kwd">is</span><span class="pln"> empty</span><span class="pun">”;</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">int</span><span class="pln"> max </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="lit">1</span><span class="pun">];</span><span class="pln">
+    </span><span class="typ">Arr</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln">length</span><span class="pun">];</span><span class="pln">
+    length </span><span class="pun">=</span><span class="pln"> length </span><span class="pun">-</span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+    max_heapify</span><span class="pun">(</span><span class="typ">Arr</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> max</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+<p><strong>Complexity:</strong> O(logN).  </p>
+<p><strong>Increase Value:</strong> In case increasing value of any node, may violate the property of max-heap, so we will swap the parent’s value with the node’s value until we get a larger value on parent node.  </p>
+<pre class="prettyprint prettyprinted"><code><span class="kwd">void</span><span class="pln"> increase_value </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln"> </span><span class="pun">],</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> val</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">val </span><span class="pun">&lt;</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln"> i </span><span class="pun">])</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        cout</span><span class="pun">&lt;&lt;”</span><span class="typ">New</span><span class="pln"> value </span><span class="kwd">is</span><span class="pln"> less than current value</span><span class="pun">,</span><span class="pln"> can</span><span class="pun">’</span><span class="pln">t be inserted</span><span class="pun">”</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln">endl</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln"> i </span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> val</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">while</span><span class="pun">(</span><span class="pln"> i </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="kwd">and</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln"> i</span><span class="pun">/</span><span class="lit">2</span><span class="pln"> </span><span class="pun">]</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln"> i </span><span class="pun">])</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        swap</span><span class="pun">|(</span><span class="typ">Arr</span><span class="pun">[</span><span class="pln"> i</span><span class="pun">/</span><span class="lit">2</span><span class="pln"> </span><span class="pun">],</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln"> i </span><span class="pun">]);</span><span class="pln">
+        i </span><span class="pun">=</span><span class="pln"> i</span><span class="pun">/</span><span class="lit">2</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+<p><strong>Complexity :</strong> O(log N).  </p>
+<p><strong>Insert Value :</strong> </p>
+<pre class="prettyprint prettyprinted"><code><span class="kwd">void</span><span class="pln"> insert_value </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln"> </span><span class="pun">],</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> val</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    length </span><span class="pun">=</span><span class="pln"> length </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+    </span><span class="typ">Arr</span><span class="pun">[</span><span class="pln"> length </span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pun">;</span><span class="pln">  </span><span class="com">//assuming all the numbers greater than 0 are to be inserted in queue.</span><span class="pln">
+    increase_val </span><span class="pun">(</span><span class="typ">Arr</span><span class="pun">,</span><span class="pln"> length</span><span class="pun">,</span><span class="pln"> val</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+<p><strong>Complexity:</strong> O(log N).  </p>
+<p><strong>Example:</strong> </p>
+<p>Initially there are 5 elements in priority queue.<br>
+<strong>Operation:</strong> Insert Value(Arr, 6)<br>
+In the diagram below, inserting another element having value 6 is violating the property of max-priority queue, so it is swapped with its parent having value 4, thus maintaining the max priority queue.  </p>
+<p><img alt="enter image description here" src="./Heaps and Priority Queues _ HackerEarth_files/d79d961.jpg"></p>
+<p><strong>Operation:</strong> Extract Maximum: <br>
+In the diagram below, after removing 8 and placing 4  at node 1, violates the property of max-priority queue. So max_heapify(Arr, 1) will be performed which will maintain the property of max - priority queue.  </p>
+<p><img alt="enter image description here" src="./Heaps and Priority Queues _ HackerEarth_files/f7e9901.jpg"></p>
+<p>As discussed above, like heaps we can use priority queues in scheduling of jobs. When there are N jobs
+in queue, each having its own priority. If the job with maximum priority will be completed first and will be removed from the queue, we can use priority queue’s operation extract_maximum here. If at every instant we have to add a new job in the queue, we can use <strong>insert_value</strong> operation as it will insert the element in O(log N) and will also maintain the property of max heap.  </p>
+<p>Now, let’s give you a problem to ponder on:  </p>
+<p>1) How will you perform below operations for min priority queue?  </p>
+<p>a. minimum (Arr) - return minimum element from Arr.<br>
+b. extract_minimum (Arr) -  removes and returns minimum element from Arr.<br>
+c. decrease_value (Arr, i, val) - decrease value of element index at i in Arr to val. It is assumed that val is at least as small as current value of Arr[i].<br>
+d. insert_value (Arr, val) - insert value in Arr.  </p>
+<div style="text-align: center;">
+<a href="https://www.hackerearth.com/code-monk-heaps-and-priority-queues/problems/" style=""> Solve Problems</a>
+</div>
+    </div> <!-- end note-body -->
+
+    
+    <div class="social-share medium-margin content">
+        <!-- fb, twitter, g+ buttons -->
+        <!-- the urls are messed up because they were changed post launch -->
+        <div class="fb-like float-left medium-margin-right fb_iframe_widget" data-href="https://www.hackerearth.com/practice/notes/heaps-and-priority-queues/" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="lucida grande" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;container_width=0&amp;font=lucida%20grande&amp;href=https%3A%2F%2Fwww.hackerearth.com%2Fpractice%2Fnotes%2Fheaps-and-priority-queues%2F&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=100"><span style="vertical-align: bottom; width: 61px; height: 20px;"><iframe name="f38bd5fa8c6d8e4" width="100px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./Heaps and Priority Queues _ HackerEarth_files/like.html" style="border: none; visibility: visible; width: 61px; height: 20px;" class=""></iframe></span></div>
+        <div class="float-left medium-margin-right"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="./Heaps and Priority Queues _ HackerEarth_files/tweet_button.89bd237a86eeb0e8b1de842a4b88b09b.en.html" style="position: static; visibility: visible; width: 61px; height: 20px;" data-url="https://www.hackerearth.com/practice/notes/heaps-and-priority-queues/"></iframe></div>
+        <div class="float-left"><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I2_1490199752312" name="I2_1490199752312" src="./Heaps and Priority Queues _ HackerEarth_files/fastbutton.html" data-gapiattached="true" title="+1"></iframe></div></div>
+        <!-- end of social buttons -->
+        <div class="clear"></div>
+    </div> <!-- social-share -->
+    
+
+    
+    <div id="comments-320-569" class="pagelet-inview comments standard-margin" ajax="/comment-action/load-comments/569/320/with-voting/with-sort/" target="comments-320-569"></div>
+    
+</div> <!-- end notes-container -->
+
+        </div><!-- left -->
+
+        <div class="right medium-margin">
+            <div class="right-box">
+                <div class="title"><i class="fa fa-magic less-margin-bottom"></i> Author</div>
+                <hr class="hr-dashed">
+                        
+                <div class="content">
+                    <div class="notes-user-info ">
+                        <a href="https://www.hackerearth.com/@prat33k" class="profile-pic inline-block medium-margin-right v-align-top">
+                            <img src="./Heaps and Priority Queues _ HackerEarth_files/137f61e700x500xfeatured01.jpg.pagespeed.ic.b8f3fw1bcm.jpg" alt="prat33k" width="80" height="80" onerror="if(typeof handle_avatar_error==&#39;function&#39;){handle_avatar_error(this);}">
+                        </a>
+                        <div class="inline-block user-info light small">
+                            <a href="https://www.hackerearth.com/@prat33k" class="inline-block large dark weight-600 hover-link">Prateek Garg</a>
+                            
+                            <div class="user-job-info ellipsis" title="Student at DIT University"><i class="fa fa-briefcase small"></i> Student at DIT University</div>
+                            
+                            
+                            <div><i class="fa fa-map-marker small"></i> Dehradun</div>
+                            
+                            <div><a href="https://www.hackerearth.com/practice/notes/u/prat33k/" class="light weight-600"><i class="fa fa-file-text-o small"></i> 7 notes</a></div>
+                        </div> <!-- user-info -->
+                    </div> <!-- notes-user-info -->
+                </div> <!-- content -->
+            </div> <!-- right-box -->
+
+            <div class="right-box" id="ef41525"><div class="title">Trending Notes</div>
+<hr class="hr-dashed">
+<div class="content">
+    
+    <div class="less-margin-2">
+        <a href="https://www.hackerearth.com/practice/notes/divyanshu12/python-diaries-chapter-3/"> Python Diaries Chapter 3 Map | Filter |  For-else | List Comprehension</a>
+        <div class="small">written by Divyanshu Bansal</div>
+    </div>
+    
+    <div class="less-margin-2">
+        <a href="https://www.hackerearth.com/practice/notes/askpk123/bokeh-interactive-visualization-library-use-graph-with-django-template/"> Bokeh | Interactive Visualization Library | Use Graph with Django Template</a>
+        <div class="small">written by Prateek Kumar</div>
+    </div>
+    
+    <div class="less-margin-2">
+        <a href="https://www.hackerearth.com/practice/notes/askpk123/bokeh-interactive-visualization-library-graph-plotting/"> Bokeh | Interactive Visualization Library | Graph Plotting</a>
+        <div class="small">written by Prateek Kumar</div>
+    </div>
+    
+    <div class="less-margin-2">
+        <a href="https://www.hackerearth.com/practice/notes/divyanshu12/python-diaries-chapter-2/"> Python Diaries chapter 2</a>
+        <div class="small">written by Divyanshu Bansal</div>
+    </div>
+    
+    <div class="less-margin-2">
+        <a href="https://www.hackerearth.com/practice/notes/divyanshu12/python-diaries-chapter-1/">  Python Diaries chapter 1</a>
+        <div class="small">written by Divyanshu Bansal</div>
+    </div>
+    
+    <a href="https://www.hackerearth.com/practice/notes/" class="small float-right">more ... </a>
+    <div class="clear"></div>
+</div> <!-- content -->
+</div>
+
+        </div> <!-- right -->
+        <div class="clear"></div>
+
+    </div> <!-- responsive-container -->
+</div> <!-- responsive-page -->
+
+
+    <!-- include modal window for login/signup -->
+    
+        
+
+
+<div id="login-modal" class="modal-window smaller-modal hidden">
+    <div class="modal-header">
+        <div class="login-form align-center larger">Log in</div>
+        <div class="signup-form-div hidden align-center larger">Sign Up</div>
+        <div class="password-reset hidden align-center larger">Reset Password</div>
+    </div>
+    <div class="modal-content">
+
+        <div class="login-form">
+            
+                
+
+
+<div class="modal-social-login align-center">
+    
+    
+    <a url="/facebook/login/?display=popup&amp;next=%2Fsocial-login-complete%2F%3Forigin_protocol%3Dhttps%26origin_host%3Dwww.hackerearth.com%26redirect%3D/practice/notes/heaps-and-priority-queues/&amp;update=facebook&amp;source=practice" title="Facebook" class="button btn-facebook btn-large float-left show-popup" minimal="true">
+    
+    <i class="fa fa-facebook"></i> <span class="regular weight-600 less-margin-left">Log in with Facebook</span>
+    </a>
+    
+    <a url="/google/login/?next=%2Fsocial-login-complete%2F%3Forigin_protocol%3Dhttps%26origin_host%3Dwww.hackerearth.com%26redirect%3D/practice/notes/heaps-and-priority-queues/&amp;update=google&amp;source=practice" title="Google" class="button btn-google btn-large float-right show-popup" minimal="true">
+    
+    <i class="fa fa-google-plus"></i> <span class="regular weight-600 less-margin-left">Log in with Google</span>
+    </a>
+    
+    <div class="clear"></div>
+</div>
+<div class="align-center standard-margin word-with-line-head">
+    <div class="word-with-line inline-block">
+        <span class="large light">or</span>
+    </div>
+</div>
+
+            
+            <form id="modal-login-form" name="login-form" method="POST" class="ajax-form medium-margin" ajax="/AJAX/login/">
+                
+
+
+    
+
+        
+
+        
+        <div class="wrapper small-wrapper">
+            
+            <input id="id_login" name="login" placeholder="Username or Email" type="text" required="">
+        </div>
+        <div class="wrapper small-wrapper">
+            <input id="id_password" name="password" placeholder="Password" type="password" required="">
+        </div>
+        
+    
+    <input type="hidden" name="next" value="/practice/notes/heaps-and-priority-queues/">
+     <div>
+         <a href="https://www.hackerearth.com/practice/notes/heaps-and-priority-queues/#" class="link-3 show-hide-many float-right" show="password-reset" hide="login-form">Forgot Password?</a>
+        <div class="clear"></div>
+    </div>
+    <div class="align-center medium-margin">
+        <input type="submit" name="submit" clicked="Logging In.." value="Log in " class="button btn-orange fontawesome btn-largest weight-600 large">
+    </div>
+
+    <script type="text/javascript">
+        try{
+            grecaptcha.render('nocaptcha-recaptcha', {
+                'sitekey' : ''
+            });
+        }
+        catch(err){}
+
+    </script>
+
+
+
+            </form>
+            
+            <div class="align-center dark regular standard-margin dont-have-account">
+                Don't have an account? <a href="https://www.hackerearth.com/practice/notes/heaps-and-priority-queues/#" class="link-13 show-hide-many regular" show="signup-form-div" hide="login-form"> Sign up</a>
+            </div>
+            
+        </div>
+
+        <div class="signup-form-div hidden">
+            
+                
+
+
+<div class="modal-social-signup align-center">
+    
+    
+    <a url="/facebook/login/?display=popup&amp;next=%2Fsocial-login-complete%2F%3Forigin_protocol%3Dhttps%26origin_host%3Dwww.hackerearth.com%26redirect%3D/practice/notes/heaps-and-priority-queues/&amp;update=facebook&amp;source=practice" title="Facebook" class="button btn-facebook btn-large float-left show-popup" minimal="true">
+    
+    <i class="fa fa-facebook"></i> <span class="regular weight-600 less-margin-left">Join with Facebook</span>
+    </a>
+    
+    <a url="/google/login/?next=%2Fsocial-login-complete%2F%3Forigin_protocol%3Dhttps%26origin_host%3Dwww.hackerearth.com%26redirect%3D/practice/notes/heaps-and-priority-queues/&amp;update=google&amp;source=practice" title="Google" class="button btn-google btn-large float-right show-popup" minimal="true">
+    
+    <i class="fa fa-google-plus"></i> <span class="regular weight-600 less-margin-left">Join with Google</span>
+    </a>
+    
+    <div class="clear"></div>
+</div>
+<div class="align-center standard-margin word-with-line-head">
+    <div class="word-with-line inline-block">
+        <span class="large light">or</span>
+    </div>
+</div>
+
+            
+            
+            <form id="modal-signup-form" name="signup-form" method="POST" class="ajax-form medium-margin" ajax="/AJAX/hackerearth/signup/?source=practice&amp;next=/practice/notes/heaps-and-priority-queues/">
+            
+                
+
+
+    
+        
+        
+
+        
+        <div class="wrapper small-wrapper float-left">
+            <input id="id_first_name" maxlength="100" name="first_name" placeholder="First Name" type="text" required="">
+        </div>
+
+        <div class="wrapper small-wrapper float-right">
+            <input id="id_last_name" maxlength="100" name="last_name" placeholder="Last Name" type="text">
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="wrapper small-wrapper">
+            <input id="id_email" maxlength="75" name="email" placeholder="Email" type="text" required="">
+        </div>
+        <div class="wrapper small-wrapper">
+            <input id="id_password" name="password" placeholder="Password" type="password" required="">
+        </div>
+    
+
+    <div class="align-center medium-margin">
+        <input type="submit" name="submit" clicked="Starting..." value="Start Now " class="button btn-orange fontawesome btn-largest weight-600 large">
+        <div class="light smaller less-margin-2 t-and-c">
+            By starting, you agree to HackerEarth's <a class="light" href="https://www.hackerearth.com/terms-of-service/" target="_blank">Terms of Service</a> and <a class="light" href="https://www.hackerearth.com/privacy/" target="_blank">Privacy Policy</a>.
+        </div>
+    </div>
+
+
+            </form>
+            <div class="align-center dark regular standard-margin dont-have-account">
+                Have an account? <a href="https://www.hackerearth.com/practice/notes/heaps-and-priority-queues/#" class="link-13 show-hide-many regular" show="login-form" hide="signup-form-div"> Log in</a>
+            </div>
+        </div>
+
+        <div class="password-reset hidden">
+            <form name="password-reset" method="POST" class="ajax-form" ajax="/AJAX/password/reset/?next=/practice/notes/heaps-and-priority-queues/">
+                
+
+
+    
+    <p class="dark large"> A password reset link will be sent to the following email id</p>
+    
+    <div class="wrapper">
+        
+        <input id="id_email" name="email" placeholder="Email" size="30" type="text" required="">
+    </div>
+    
+    <div class="align-center medium-margin">
+        <input type="submit" name="submit" clicked="Sending.." value="Send Password Reset Link" class="button btn-orange btn-largest weight-600 large">
+    </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- override this block where we do not want the footer -->
+    
+    
+        
+        
+
+
+<div class="footer-large">
+    <div class="content align-center">
+        <div class="section">
+            <p class="category-title">About Us</p>
+            <ul>
+                <li><a target="_blank" href="http://blog.hackerearth.com/">Blog</a></li>
+                <li><a target="_blank" href="http://engineering.hackerearth.com/">Engineering Blog</a></li>
+
+                <li><a target="_blank" href="http://news.hackerearth.com/">Updates &amp; Releases </a></li>
+
+                <li><a target="_blank" href="https://www.hackerearth.com/team/">Team</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/careers/">Careers</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/in-media/">In the Press</a></li>
+            </ul>
+        </div>
+        <div class="section">
+            <p class="category-title">HackerEarth</p>
+            <ul>
+                <li><a target="_blank" href="https://www.hackerearth.com/docs/api/developers/code/legacy/">API</a></li>
+                <li><a target="_blank" href="https://chrome.google.com/webstore/detail/hackerearth-extension/aileihjgpakhkhedejpkpamnhpbnjhoj?ref=footer">Chrome Extension</a></li>
+                <li><a target="_blank" href="https://code.hackerearth.com/">CodeTable</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/about/profile/">Developer Profile</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/resume/">Resume</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/badge/">Get Badges</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/university/">Campus Ambassadors</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/getmehired/">Get Me Hired</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/privacy/">Privacy</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/terms-of-service/">Terms of Service</a></li>
+                <!--
+                <li><a target="_blank" href="http://status.hackerearth.com">System Status</a></li>
+                <li><a target="_blank" href="http://webchat.freenode.net/?channels=%23hackerearth">IRC</a></li>
+                -->
+            </ul>
+        </div>
+        <div class="section">
+            <p class="category-title">Developers</p>
+            <ul>
+                <li><a target="_blank" href="https://www.hackerearth.com/ama/">AMA</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/codemonk/">Code Monk</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/docs/wiki/developers/judge/">Judge Environment</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/docs/wiki/developers/solution-guide/">Solution Guide</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/docs/wiki/developers/setter-guide/">Problem Setter Guide</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/problems/">Practice Problems</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/challenges/">HackerEarth Challenges</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/college-challenges/">College Challenges</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/college-ranking/">College Ranking</a></li>
+                <li><a target="_blank" href="https://sprint.hackerearth.com/">Organise Hackathon</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/hackathon-handbook/">Hackathon Handbook</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/getstarted-competitive-programming/">Competitive Programming</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/getstarted-opensource/">Open Source</a></li>
+            </ul>
+        </div>
+        <div class="clear clear-show-tablet"></div>
+        <div class="section">
+            <p class="category-title">Employers</p>
+            <ul>
+                <li><a target="_blank" href="https://www.hackerearth.com/recruit/source/">Developer Sourcing</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/recruit/lateral/">Lateral Hiring</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/recruit/campus/">Campus Hiring</a></li>
+                <li><a target="_blank" href="https://sprint.hackerearth.com/">Hackathons</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/recruit/faq/">FAQs</a></li>
+                <li><a target="_blank" href="https://www.hackerearth.com/recruit/#customers-speak">Customers</a></li>
+                <!--<li><a target="_blank" href="//www.hackerearth.com/annual-report-2014/">Annual Report</a></li>-->
+            </ul>
+
+        </div>
+        <div class="section connect">
+            <p class="category-title">Reach us</p>
+            <!-- <div class="map standard-margin-right float-left">
+                <div style="overflow:hidden;height:130px;width:200px;">
+                    <div id="gmap_canvas" style="height:130px;width:200px;"></div>
+                    <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+                </div> -->
+                <!--<a class="mixpanel-logo" href="https://mixpanel.com/f/partner"><img src="//cdn.mxpnl.com/site_media/images/partner/badge_light.png" alt="Mobile Analytics" /></a>-->
+                <!-- </div> -->
+            <div class="reach">
+                <p class="small he-address">
+                    <a target="_blank" href="http://hck.re/map">
+                        Ground Floor, Salarpuria Business Center,<br>4th B Cross Road, 5th A Block,<br>Koramangala Industrial Layout,<br>Bangalore, Karnataka 560095, India.
+                    </a>
+                </p>
+                <p class="small weight-600 less-margin-bottom">
+                    <i class="fa fa-envelope less-margin-right"></i>
+                    <a href="mailto:contact@hackerearth.com">contact@hackerearth.com</a>
+                    <br>
+                    
+                </p>
+                <div class="less-margin-2 social-links large">
+                    <a href="https://www.facebook.com/HackerEarth" class="float-left lighter medium-margin-right" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                    <a href="https://twitter.com/hackerearth" class="float-left lighter medium-margin-right" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                    <a href="https://www.linkedin.com/company/hackerearth" class="float-left lighter medium-margin-right" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="https://plus.google.com/+Hackerearth" class="float-left lighter medium-margin-right" target="_blank"><i class="fa fa-google-plus-square"></i></a>
+                    <div class="clear"></div>
+                </div>
+            </div> <!-- reach -->
+        </div> <!-- connect -->
+        <div class="clear"></div>
+    </div> <!-- end content -->
+    <div class="footer-bottom-container lighter small">
+        <div class="footer-bottom">
+            
+            <img src="./Heaps and Priority Queues _ HackerEarth_files/HE_identity.png">
+            
+            <span class="align-right float-right">© 2017 HackerEarth</span>
+        </div>
+    </div>
+
+</div> <!-- footer -->
+
+        
+    
+    
+
+    <div class="expand-box" id="recruiter-box" style="display: none;">
+        <div class="down-arrow"></div>
+        <ul class="no-margin">
+            
+            
+            
+            <a href="https://www.hackerearth.com/logout/?next=/practice/notes/heaps-and-priority-queues/"><li>Logout</li></a>
+        </ul>
+    </div>
+
+    
+
+    <!-- Include notifications box -->
+    
+
+<div class="expand-box" id="notifications-box" style="display: none;">
+    <div class="down-arrow"></div>
+    <div class="notifications-title-container">
+        <div class="float-left weight-600">Notifications</div>
+        <div class="float-right">
+            <a href="https://www.hackerearth.com/practice/notes/heaps-and-priority-queues/#" ajax="https://www.hackerearth.com/notifications/AJAX/mark-all-read/" class="notif-mark-all-read link smaller clicky-ajax">Mark All as Read</a>
+        </div>
+        <div class="clear"></div>
+    </div> <!-- notifications-title-container -->
+
+    <div class="notifications-container nice-scrollbar" id="notifications-container" style="overflow: hidden; outline: none;" tabindex="5000">
+    </div> <!-- notifications-container -->
+
+    <div class="smaller caps weight-600 align-center less-margin-2 less-margin-2-bottom">
+        <a class="link" href="https://www.hackerearth.com/notifications/">View All Notifications</a>
+    </div>
+<div id="ascrail2000" class="nicescroll-rails" style="width: 7px; z-index: 10; background: rgb(238, 238, 238); cursor: default; position: absolute; top: 0.8px; left: -7px; height: 0px; opacity: 1; display: none;"><div style="position: relative; top: 0px; float: right; width: 7px; height: 0px; background-color: rgb(204, 204, 204); border: none; background-clip: padding-box; border-radius: 0px;"></div></div><div id="ascrail2000-hr" class="nicescroll-rails" style="height: 7px; z-index: 10; background: rgb(238, 238, 238); top: -6.2px; left: 0px; position: absolute; opacity: 1; cursor: default; display: none;"><div style="position: relative; top: 0px; height: 7px; width: 0px; background-color: rgb(204, 204, 204); border: none; background-clip: padding-box; border-radius: 0px;"></div></div></div> <!-- notifications-box -->
+
+
+    <!-- Load notification icon with unread count -->
+    <div id="header-notif-icon-trigger" class="load-pagelet hidden" target="header-notif-icon" ajax="/notifications/pagelets/header-notif-icon-count/" show-loader="false"></div>
+
+    
+    <!-- Load live events widget -->
+    <div id="live-events-trigger" class="load-pagelet hidden" target="live-events-trigger-data" ajax="/AJAX/live_events_widget_count/" show-loader="false"></div>
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+        
+        
+
+        <!-- Store any json returned for bigpipe -->
+        <div id="bigpipe-json" class="hidden">
+            {"ef41525": "/recommendation/pagelets/trending-card/?sensual=True"}
+        </div>
+
+        <!-- Store any json returned for bigpipe -->
+        <div id="user-prompt-json" class="hidden">
+            {}
+        </div>
+
+        <!-- Store any html returned for feedback popup -->
+        <div id="user-feedback-popup" class="hidden"></div>
+
+
+        <!-- realtime host -->
+        <div id="realtime-host" class="hidden">realtime.hackerearth.com</div>
+        <!-- realtime port -->
+        <div id="realtime-port" class="hidden">80</div>
+
+        <!-- client name for updating parts of page in realtime -->
+        <div id="pusher-channel-name-0" class="hidden">514d92bf8ddb93b329f5cbdb0c2bb926de8d2edc</div>
+        
+
+        
+            <div id="common-notification">
+            </div>
+        
+        <!-- pusher app key -->
+        <div id="pusher-app-key" class="hidden">58a29e5cae2309f04b28</div>
+
+        <!-- pusher auth url -->
+        <div id="pusher-auth-url" class="hidden">/realtime/pusher/auth/</div>
+
+        <!-- ping url for user presence -->
+        <div id="ghost-ping-url" class="hidden" ajax="https://ghost-kjio.hackerearth.com/ghost/ping/"></div>
+
+        
+        
+
+        <!-- url to get active lab features -->
+        
+        <!-- All the scripts go here -->
+        <script>
+            var CURRENT_PATH = "https://www.hackerearth.com/practice/notes/heaps-and-priority-queues/";
+            var HISTORY = '';
+
+            // Make code constants available globally in JS
+            var MAP_LANG_TO_NAME = {"SCALA_2118": "Scala 2.11.8", "LUA": "Lua", "PASCAL": "Pascal", "CSHARP": "C#", "CPP": "C++", "PYTHON3": "Python 3", "POSTGRESQL": "PostgreSQL", "SCALA": "Scala", "PERL": "Perl", "HASKELL": "Haskell", "D": "D", "R": "R(RScript)", "CPP11": "C++11", "GO": "Go", "RUBY": "Ruby", "GROOVY": "Groovy", "LOLCODE": "LOLCODE", "LISP": "Lisp", "Text": "Text", "WHENEVER": "Whenever", "MYSQL": "MySQL", "OBJECTIVEC": "Objective-C", "PHP": "PHP", "JAVASCRIPT_UI": "JavaScript", "PYTHON": "Python", "JAVASCRIPT": "JavaScript(Rhino)", "VB": "Visual Basic", "vp": "N/A", "TEXTFILE": "Text", "JAVA8": "Java 8", "JAVASCRIPT_NODE": "JavaScript(Node.js)", "RACKET": "Racket", "HTML": "HTML", "SWIFT": "Swift", "RUST": "Rust", "FSHARP": "F#", "C": "C", "OCAML": "OCaml", "OCTAVE": "Octave", "CLOJURE": "Clojure", "BEFUNGE": "Befunge", "CSS": "CSS", "ERLANG": "Erlang", "JAVA": "Java", "LISP_SBCL": "Lisp (SBCL)", "JULIA": "Julia", "ORACLE": "Oracle Database", "MSSQL": "MSSQL"};
+            var MAP_NAME_TO_LANG = {"Lisp (SBCL)": "LISP_SBCL", "Java": "JAVA", "Scala": "SCALA", "JavaScript": "JAVASCRIPT_UI", "Perl": "PERL", "Lua": "LUA", "JavaScript(Rhino)": "JAVASCRIPT", "MySQL": "MYSQL", "Erlang": "ERLANG", "LOLCODE": "LOLCODE", "C#": "CSHARP", "Whenever": "WHENEVER", "HTML": "HTML", "Rust": "RUST", "Octave": "OCTAVE", "Ruby": "RUBY", "Scala 2.11.8": "SCALA_2118", "Groovy": "GROOVY", "C": "C", "Python 3": "PYTHON3", "Lisp": "LISP", "F#": "FSHARP", "N/A": "vp", "C++": "CPP", "Racket": "RACKET", "Objective-C": "OBJECTIVEC", "Swift": "SWIFT", "R(RScript)": "R", "D": "D", "Clojure": "CLOJURE", "Befunge": "BEFUNGE", "Java 8": "JAVA8", "CSS": "CSS", "PostgreSQL": "POSTGRESQL", "Text": "TEXTFILE", "OCaml": "OCAML", "Julia": "JULIA", "JavaScript(Node.js)": "JAVASCRIPT_NODE", "Python": "PYTHON", "Pascal": "PASCAL", "Haskell": "HASKELL", "C++11": "CPP11", "Go": "GO", "Visual Basic": "VB", "PHP": "PHP", "MSSQL": "MSSQL", "Oracle Database": "ORACLE"};
+        </script>
+
+        
+        <!-- alljs: static_media/js/jquery-1.7.min.patched.js static_media/js/jquery.color.js static_media/js/jquery.elastic.js static_media/js/ajaxSend.js  static_media/js/jquery.inview.js  static_media/js/tooltip/jquery.tipTip.modified.js  static_media/offline/offline.min.js  static_media/js/watermark.min.js  static_media/history.js?v=0.1/scripts/bundled/html4html5/jquery.history.js  static_media/js/jquery.nicescroll.js  static_media/simplemodal/simplemodal.js static_media/js/jquery.sticky.js static_media/js/pusher.min.js static_media/js/ifvisible.min.js static_media/ghost/ghost.js static_media/feeds/feeds.js static_media/base/progress_bar.js -->
+        
+
+
+<script>
+    UPLOADING_TEXT = "Uploading";
+    UPLOADED_TEXT = "Uploaded";
+    SAVING_TEXT = "Saving..";
+    UPLOAD_SUCCESS_MESSAGE = "File saved successfully.";
+    UPLOAD_ERROR_MESSAGE = "An error occured while saving, please try again in sometime.";
+</script>
+<script type="text/javascript" src="./Heaps and Priority Queues _ HackerEarth_files/alljs.js.download" crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="./Heaps and Priority Queues _ HackerEarth_files/base1.0.1.js.download" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="./Heaps and Priority Queues _ HackerEarth_files/bigpipe.js.download" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="./Heaps and Priority Queues _ HackerEarth_files/pusher_realtime.js.download" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="./Heaps and Priority Queues _ HackerEarth_files/userprompt.js.download" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="./Heaps and Priority Queues _ HackerEarth_files/history.js.download" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="./Heaps and Priority Queues _ HackerEarth_files/commentUtils.js.download" crossorigin="anonymous"></script>
+
+        
+        <script src="./Heaps and Priority Queues _ HackerEarth_files/api.js.download" async="" defer=""></script>
+        
+
+        <script src="./Heaps and Priority Queues _ HackerEarth_files/offline.min.js.download" crossorigin="anonymous"></script>
+        
+
+        
+        <script type="text/x-mathjax-config;executed=true">
+          MathJax.Hub.Config({messageStyle: "none",
+            tex2jax: {
+              inlineMath: [['$$','$$']],
+              displayMath: [['$$$', '$$$']],
+              preview: "none"
+            }
+          });
+        </script>
+        <script type="text/javascript" async="" src="./Heaps and Priority Queues _ HackerEarth_files/MathJax.js.download"></script>
+        <script type="text/javascript" src="./Heaps and Priority Queues _ HackerEarth_files/MathJax.js(1).download"></script>
+
+        <script type="text/javascript">
+          window.addEventListener("load", function() {
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+          });
+        </script>
+        
+
+        <script>
+            Offline.options = {
+                interceptRequests: false,
+                requests: false,
+            };
+        </script>
+
+        
+        <script>
+            // do all maps stuff here
+            function initializeMaps(){
+
+                // Call other map functions
+                try{
+                    window.mapStuff();
+                } catch(err){
+                }
+
+            }
+
+            function loadMaps() {
+                var script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.src = 'https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&callback=initializeMaps';
+                document.body.appendChild(script);
+            }
+
+            $(document).ready(function(){
+                loadMaps();
+            });
+
+        </script>
+        
+
+        
+
+
+<script>
+
+$(document).ready(function (){
+    $('#header-notif-icon-trigger').click();
+
+    
+    $('#live-events-trigger').click();
+    
+
+    
+    
+    
+    
+
+    // show kone ge widget if not visited
+    
+
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    
+    var m_links = {};
+    var m_elements = {
+        '#modal-login-form input[type=submit]': 'Modal Email Login',
+        '#modal-signup-form input[type=submit]': 'Modal Email Signup',
+        '.modal-social-login .btn-facebook': 'Modal Facebook Login',
+        '.modal-social-login .btn-google': 'Modal Google Login',
+        '.modal-social-signup .btn-facebook': 'Modal Facebook Signup',
+        '.modal-social-signup .btn-google': 'Modal Google Signup',
+        '.top-banner .login-banner a': 'Signup after banner click',
+    };
+    
+    for (var key in m_elements) {
+        $(key).live('click', {'key': key }, function(e) {
+            var key = e.data.key;
+            mixpanel.track('Click', {'name': m_elements[key]});
+        });
+    }
+    for (var key in m_links) {
+        mixpanel.track_links(key, 'Click', {'name': m_links[key]});
+    }
+});
+</script>
+
+
+
+
+<script type="text/javascript" src="./Heaps and Priority Queues _ HackerEarth_files/search.1.0.js.download" crossorigin="anonymous" async="" defer=""></script>
+
+
+
+
+
+<script type="text/javascript" src="./Heaps and Priority Queues _ HackerEarth_files/lab.js.download" crossorigin="anonymous"></script>
+
+
+
+        <script>
+            // Used in search
+            var is_user_logged_in = false;
+        </script>
+
+        <script type="text/javascript" src="./Heaps and Priority Queues _ HackerEarth_files/detect_timezone.js.download" crossorigin="anonymous"></script>
+        <script>
+
+            function setTimezoneCookie(detected_user_tz) {
+                /* Sets the detected user timezone as a cookie in the browser.
+                   If someone changes it or removes it, a sanity check is
+                   performed and the cookie is reset.
+
+                   This cookie is set for ready availability of user timezone
+                   in the backend.
+                */
+
+                const USER_TIMEZONE_COOKIE = 'user_tz';
+                // Try to get the existing user timezone cookie stored
+                // in the browser.
+                user_tz = readCookie(USER_TIMEZONE_COOKIE);
+
+                // Flag to determine whether a new cookie has to be created.
+                create_cookie = false;
+
+                if(user_tz) {
+                    if(user_tz !== detected_user_tz) {
+                        // If someone has changed the cookie in some way, we
+                        // set a new cookie.
+                        eraseCookie(USER_TIMEZONE_COOKIE);
+                        create_cookie = true;
+                    }
+                } else {
+                    create_cookie = true;
+                }
+
+                // Create a new cookie if create_cookie flag is set.
+                createCookie(USER_TIMEZONE_COOKIE, detected_user_tz, 1);
+
+            }
+            $(document).ready(function(){
+                var timezone = jstz.determine_timezone(); // Now you have an instance of the TimeZone object.
+                // Set as a cookie in browser for easy access in backend.
+                setTimezoneCookie(timezone.name());
+
+                // Set as a js variable for easy access across frontend.
+                USER_TIMEZONE = timezone.name()
+
+                
+                
+                
+                
+
+                
+
+                
+                    $.ajax({
+                        type: "POST",
+                        url:"/users/AJAX/set-timezone/",
+                        data: {
+                        'timezone': timezone.name(),
+                        },
+                    });
+                
+            });
+        </script>
+
+        
+
+        <script type="text/javascript">
+            
+            $(document).ready(function(){
+                //mixpanel delegate links custom method
+                mixpanel.delegate_links = function (parent, selector, event_name, properties) {
+                    properties = properties || {};
+                    parent = parent || document.body;
+                    parent = $(parent);
+                    parent.on('click', selector, function (event) {
+                        var new_tab = event.which === 2 || event.metaKey || event.target.target === '_blank' || this.target === '_blank';
+                        properties.url = event.target.href || this.href;
+                        function callback() {
+                            if (new_tab) {
+                                return;
+                            }
+                            window.location = properties.url;
+                        }
+                        if (!new_tab) {
+                            event.preventDefault();
+                            setTimeout(callback, 300);
+                        }
+                        mixpanel.track(event_name, properties, callback);
+                    });
+                };
+            });
+            
+        </script>
+
+        
+<script type="text/javascript" src="./Heaps and Priority Queues _ HackerEarth_files/prettifyall.js.download" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./Heaps and Priority Queues _ HackerEarth_files/votes.js.download" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./Heaps and Priority Queues _ HackerEarth_files/tagging_autocomplete.js.download" crossorigin="anonymous"></script>
+
+<script>
+    $("#notes-title-bar").sticky({
+        bottomSpacing: 600,
+    });
+    $("#notes-title-bar").width($("#notes-left-container").width()+ 'px');
+</script>
+
+<script>
+$(document).ready(function() {
+    styleCode();
+});
+</script>
+
+
+        
+        <!-- mixpanel analytics start -->
+        <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);mixpanel.init("4c30b8635363027dfb780d5a61785112");</script>
+        <!-- mixpanel analytics end -->
+        <script type="text/javascript">
+            
+                
+                    mixpanel.unregister("username");
+                    mixpanel.unregister("email");
+                    mixpanel.unregister("date_of_joining");
+                    mixpanel.unregister("user_bucket");
+                    mixpanel.unregister("company");
+                    mixpanel.unregister("is_recruiter");
+                    mixpanel.register({
+                        "url_path": "/practice/notes/heaps-and-priority-queues/"
+                    });
+                
+            
+        </script>
+        
+
+        
+        <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Heaps and Priority Queues _ HackerEarth_files/1FegrZjPbq3.html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+        <script>
+            <!-- facebook button -->
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+
+            <!-- twitter button -->
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+            <!-- google+ button -->
+            (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+        </script>
+        
+
+        
+        <script>
+        // Include the UserVoice JavaScript SDK (only needed once on a page)
+        UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/5F90ycbP4JOg1fOUoELScA.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
+
+        //
+        // UserVoice Javascript SDK developer documentation:
+        // https://www.uservoice.com/o/javascript-sdk
+        //
+
+        // Set colors
+        UserVoice.push(['set', {
+          accent_color: '#448dd6',
+          trigger_color: 'white',
+          trigger_background_color: 'rgba(46, 49, 51, 0.6)'
+        }]);
+
+        // Identify the user and pass traits
+        // To enable, replace sample data with actual user traits and uncomment the line
+        UserVoice.push(['identify', {
+          //email:      'john.doe@example.com', // User’s email address
+          //name:       'John Doe', // User’s real name
+          //created_at: 1364406966, // Unix timestamp for the date the user signed up
+          //id:         123, // Optional: Unique id of the user (if set, this should not change)
+          //type:       'Owner', // Optional: segment your users by type
+          //account: {
+          //  id:           123, // Optional: associate multiple users with a single account
+          //  name:         'Acme, Co.', // Account name
+          //  created_at:   1364406966, // Unix timestamp for the date the account was created
+          //  monthly_rate: 9.99, // Decimal; monthly rate of the account
+          //  ltv:          1495.00, // Decimal; lifetime value of the account
+          //  plan:         'Enhanced' // Plan name for the account
+          //}
+        }]);
+
+        // Add default trigger to the bottom-right corner of the window:
+        UserVoice.push(['addTrigger', { mode: 'contact', trigger_position: 'bottom-right' }]);
+
+        // Or, use your own custom trigger:
+        //UserVoice.push(['addTrigger', '#id', { mode: 'contact' }]);
+
+        // Autoprompt for Satisfaction and SmartVote (only displayed under certain conditions)
+        UserVoice.push(['autoprompt', {}]);
+        </script>
+        
+
+    
+
+</div>
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","802574803157043",{em:"insert_email_variable,"});fbq("track","PageView");</script>
+<noscript>&lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=802574803157043&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;</noscript>
+
+
+<div id="tiptip_holder" style="max-width:200px;"><div id="tiptip_arrow"><div id="tiptip_arrow_inner"></div></div><div id="tiptip_content"></div></div><script type="text/javascript" src="./Heaps and Priority Queues _ HackerEarth_files/js"></script><div class="offline-ui offline-ui-up"><div class="offline-ui-content"></div></div><div class="offline-ui offline-ui-up"><div class="offline-ui-content"></div></div><div data-html2canvas-ignore="true" class="uv-icon uv-bottom-right"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="39px" height="39px" viewBox="0 0 39 39" enable-background="new 0 0 39 39" xml:space="preserve">
+<g>
+	<path class="uv-bubble-background" fill="rgba(46, 49, 51, 0.6)" d="M31.425,34.514c-0.432-0.944-0.579-2.007-0.591-2.999c4.264-3.133,7.008-7.969,7.008-13.409
+		C37.842,8.658,29.594,1,19.421,1S1,8.658,1,18.105c0,9.446,7.932,16.79,18.105,16.79c1.845,0,3.94,0.057,5.62-0.412
+		c0.979,1.023,2.243,2.3,2.915,2.791c3.785,2.759,7.571,0,7.571,0S32.687,37.274,31.425,34.514z" style="fill: rgba(46, 49, 51, 0.6);"></path>
+	<g>
+		<g>
+			<path class="uv-bubble-foreground" fill="#FFFFFF" d="M16.943,19.467c0-3.557,4.432-3.978,4.432-6.058c0-0.935-0.723-1.721-2.383-1.721
+				c-1.508,0-2.773,0.725-3.709,1.87l-2.441-2.743c1.598-1.9,4.01-2.924,6.602-2.924c3.891,0,6.271,1.959,6.271,4.765
+				c0,4.4-5.037,4.732-5.037,7.265c0,0.481,0.243,0.994,0.574,1.266l-3.316,0.965C17.303,21.459,16.943,20.522,16.943,19.467z
+				 M16.943,26.19c0-1.326,1.114-2.441,2.44-2.441c1.327,0,2.442,1.115,2.442,2.441c0,1.327-1.115,2.441-2.442,2.441
+				C18.058,28.632,16.943,27.518,16.943,26.19z" style="fill: white;"></path>
+		</g>
+	</g>
+</g>
+</svg>
+</div><iframe name="oauth2relay846166322" id="oauth2relay846166322" src="./Heaps and Priority Queues _ HackerEarth_files/postmessageRelay.html" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./Heaps and Priority Queues _ HackerEarth_files/saved_resource.html"></iframe></body></html>

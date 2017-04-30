@@ -1,0 +1,94 @@
+#include <bits/stdc++.h>
+#define REP(i,x,y) for(int i = x; i<=y; i++)
+#define lli int long long
+using namespace std;
+
+lli a[100010], st[4*100010], lazy[4*100010];
+
+void build_st(lli node, lli start, lli end) {
+	if(start == end) {
+		st[node] = 0;
+		lazy[node] = 0;
+	}
+	else {
+		lli mid = (start+end)/2;
+		build_st(2*node, start, mid);
+		build_st(2*node+1, mid+1, end);
+		st[node] = st[2*node] + st[2*node+1];
+	}
+	return;
+}
+
+void lazy_update_st(lli node, lli start, lli end, lli l, lli r, lli v) {
+	if(lazy[node]!=0) {
+		st[node] += (end-start+1)*lazy[node];
+		lazy[2*node] += lazy[node];
+		lazy[2*node+1] += lazy[node];
+		lazy[node] = 0;
+	}
+
+	if(start>r || end<l || start<end) {
+		return;
+	}
+
+	if(start>=l && end<=r) {
+		st[node] += (end-start+1)*v;
+		lazy[2*node] += v;
+		lazy[2*node+1] += v;
+		return;
+	}
+
+	lli mid = (start+end)/2;
+	lazy_update(2*node, start, mid, l, r, v);
+	lazy_update(2*node+1, mid+1, end, l, r, v);
+	st[node] = st[2*node] + st[2*node+1];
+	return;
+}
+
+lli lazy_query_st(lli node, lli start, lli end, lli l, lli r) {
+	if(lazy[node]!=0) {
+		st[node] += (end-start+1)*lazy[node];
+		lazy[2*node] += lazy[node];
+		lazy[2*node+1] += lazy[node];
+		lazy[node] = 0;
+	}
+
+	if(start>r || end<l || start<end) {
+		return 0;
+	}
+
+	if(start>=l && end<=r) {
+		return st[node];
+	}
+
+	lli mid = (start+end)/2;
+	lli m1 = lazy_query_st(2*node, start, mid, l, r);
+	lli m2 = lazy_query_st(2*node+1, mid+1, end, l, r);
+	return m1 + m2;
+}
+
+int main() {
+	int t;
+	cin >> t;
+	while(t-->0) {
+		int n, c;
+		cin >> n >> c;
+		REP(i,1,n) {
+			a[i] = 0;
+		}
+		build_st(1,1,n);
+		REP(i,1,c) {
+			int type;
+			lli p, q, v;
+			cin >> type >> p >> q;
+			if(type == 1) {
+				cout << lazy_query_st(1,1,n,p,q) << endl;
+			}
+			else {
+				cin >> v;
+				lazy_update_st(1,1,n,p,q,v);
+			}
+		}
+	}
+	return 0;
+}
